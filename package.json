@@ -5,8 +5,9 @@
     "build": "gulp webpack"
   },
   "dependencies": {
-    "react": "*",
-    "express": "*"
+    "express": "*",
+    "fluxible": "^0.1.5",
+    "react": "*"
   },
   "devDependencies": {
     "6to5": "^2.12.4",
