@@ -1,17 +1,22 @@
 'use strict';
 import createStore from "fluxible/utils/createStore";
 
-var ApplicationStore = createStore({
+export default createStore({
   storeName: 'ApplicationStore',
   handlers: {
+    'SET_NAME': 'handleSetName'
   },
   initialize () {
-    this.title = 'Hello! pirosikick!';
+    this.name = '';
   },
   getState () {
     return {
-      title: this.title
+      name: this.name
     };
+  },
+  handleSetName: function (name) {
+    this.name = name;
+    this.emitChange();
   },
   dehydrate () {
     return this.getState();
@@ -20,5 +25,3 @@ var ApplicationStore = createStore({
     this.title = state.title;
   }
 });
-
-export default ApplicationStore;
